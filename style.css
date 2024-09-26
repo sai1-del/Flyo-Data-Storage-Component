@@ -1,0 +1,190 @@
+:root{
+    --Gradient: linear-gradient(90deg, pink, red);
+    --Pale-Blue: hsl(243, 100%, 93%);
+    --Grayish-Blue: hsl(229, 7%, 55%);
+    --Dark-Blue: hsl(228, 56%, 26%);
+    --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+*{
+    
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    font-size:1.4 rem;
+    background: url(images/bg-mobile.png) no-repeat center center / cover;
+    min-height:100vh;
+    display:grid;
+    align-items: center;
+    justify-content:center;
+}
+main{
+    margin:2rem;
+    display:grid;
+    grid-template-columns: 1fr ;
+    row-gap: 2rem;
+    /*justify-content: center;
+    align-items: center;*/
+}
+.section{
+    color:var(--Pale-Blue);
+    background-color:var(--Dark-Blue);
+    display:grid;
+    width:auto;
+    justify-content: start;
+    padding:20px;
+    grid-template-columns:repeat(auto-fill,minmax(150px,1fr)) ;
+    border-radius: 0.5em;
+}
+.br1{
+    border-top-right-radius: 6.5rem;
+}
+.logo{
+    margin-bottom:2rem;
+}
+.icon-wrapper{
+    display:flex;
+    gap:2rem;
+}
+.document, .folder, .upload{
+    background-color:var(--Very-Dark-Blue);
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    height:2.5rem;
+    width:2.5rem;
+}
+.progress-bar{
+    background-color:var(--Very-Dark-Blue);
+    height:1rem;
+    width:100%;
+    border-radius:2rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow:0 0 0 0.2rem rgb(2, 2, 21);
+}
+.progress{
+    background:var(--Gradient);
+    height:100%;
+    width:75%;
+    position:inherit;
+    border-radius: inherit;
+}
+.progress:after{
+    content:'';
+    width:1.2rem;
+    height:1rem;
+    background-color:var(--Pale-Blue);
+    border-radius:50%;
+    position:absolute;
+    right:0.1rem;
+    top:50%;
+    transform: translateY(-50%);
+}
+.value{
+    display:flex;
+    justify-content: space-between;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.card{
+    background-color:var(--Pale-Blue);
+    display:flex;
+    border-radius: 0.8rem;
+    width:30%;
+    height:4rem;
+    align-items:center;
+    justify-content: center;
+    position:absolute;
+    left:50%;
+    color:black;
+    transform:translateX(-50%);
+}
+.first{
+    font-size:2rem;
+    font-weight:700;
+    margin-right:0.8rem;
+}
+.last{
+    font-weight:700;
+    color:grey;
+    text-transform: uppercase;
+}
+
+@media screen and (min-width:1000px){
+    body{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        min-height:75vh;
+        background:url(images/bg-desktop.png) no-repeat center;
+        background-size: contain;
+        background-attachment: fixed;
+        background-position: center bottom;
+        background-color:var(--Very-Dark-Blue);
+        margin:0;
+    }
+    main{
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        max-width:100rem;
+        column-gap:0.3rem;
+    }
+    .section{
+        width:22rem;
+        display:grid;
+        padding:2rem;
+        justify-items: center;
+    }
+    .col1{
+        grid-column:1/2;
+        padding-right:8rem;
+        margin-top:1rem;
+        height:13rem;
+    }
+    .col2{
+        grid-column:2/3;
+        position:relative;
+        height:10rem;
+        margin-top:4rem;
+        width:100%;
+        padding-top:2.5rem;
+        padding-right: 7rem;
+    }
+    .card{
+        transform: translateY(40%);
+        top:-4rem;
+        left:12rem;
+        width:40%;
+        padding:0rem;
+    }
+    .card:after{
+        content:'';
+        position:absolute;
+        width:0;
+        height:0;
+        border-width:3rem 4rem 0 0;
+        border-style:solid;
+        border-color:var(--Pale-Blue) transparent transparent transparent;
+        top:12.5%;
+        right:-0.5rem;
+        transform:translateY(80%) rotate(90deg);
+    }
+    .first{
+        font-size:2rem;
+        font-weight:700;
+        margin-right:0.8rem;
+    }
+    .last{
+        font-weight:700;
+        color:grey;
+        text-transform: uppercase;
+    }
+    .value{
+        gap:10rem;
+    }
+}
