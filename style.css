@@ -23,6 +23,7 @@ body{
 main{
     margin:2rem;
     display:grid;
+    align-items:stretch;
     grid-template-columns: 1fr ;
     row-gap: 2rem;
     /*justify-content: center;
@@ -35,10 +36,10 @@ main{
     width:auto;
     justify-content: start;
     padding:20px;
-    grid-template-columns:repeat(auto-fill,minmax(150px,1fr)) ;
+    grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
     border-radius: 0.5em;
 }
-.br1{
+.col1{
     border-top-right-radius: 6.5rem;
 }
 .logo{
